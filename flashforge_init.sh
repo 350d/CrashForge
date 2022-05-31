@@ -1,12 +1,12 @@
 #!/bin/sh
-EXE=creator3-arm
-KERNEL=uImage-creator3*
-LOG=creator3-log-pwn.log
-M3HEX=Creator3.hex
+EXE=adventurer3-mips
+KERNEL=uImage-adventurer3*
+LOG=adventurer3-log-pwn.log
+M3HEX=Adventurer3.hex
 MYDAEMON=mydaemon.out
-MACHINE=creator3
-PID=0004
-MACHINE_ARCH=armv5tejl
+MACHINE=Adventurer3
+PID=0008
+MACHINE_ARCH=mips
 
 # Get the working directory
 WORKDIR=$(cd `dirname $0`; pwd)

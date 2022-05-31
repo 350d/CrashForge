@@ -1,10 +1,10 @@
 #!/bin/sh
 
-EXE=creator3-arm
-UNVS=universal-arm
-PID=000C
-QTAPP="/opt/flashforge/exe/creator3"
-OLD_QTAPP=${QTAPP}"-arm"
+EXE=adventurer3-mips
+UNVS=universal-mips
+PID=0008
+QTAPP="/opt/flashforge/exe/adventurer3"
+OLD_QTAPP=${QTAPP}"-mips"
 #ifconfig eth0 10.33.23.146
 udhcpc -i eth0 &
 #RUNPARA=" 1 debug -qws "
@@ -41,15 +41,15 @@ do
 			echo "mount /dev/sda$i to /mnt failed"
 			continue
 	  else
-	  ls -1t /mnt/creator3*.zip
+	  ls -1t /mnt/adventurer3*.zip
 		if [ $? -eq 0 ];then
-			UPDATEFILE=`ls -1t /mnt/creator3*.zip | head -n 1`
+			UPDATEFILE=`ls -1t /mnt/adventurer3*.zip | head -n 1`
 			if [ -f $UPDATEFILE ];then
 				echo "find update file: ${UPDATEFILE}"
 				rm -rf /data/update
 				cp -a ${UPDATEFILE} /data/
 				if [ $? -ne 0 ];then
-					rm -rf /data/creator3*.zip
+					rm -rf /data/adventurer3*.zip
 					sync
 					umount /mnt
 					break
